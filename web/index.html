@@ -1,44 +1,220 @@
-<!DOCTYPE html> <!-- defines that this document is an HTML5 document -->
-<!-- Comment. It may span multiple lines -->
+<html>
+    <head>
+        <title>Bonsai Wok Teriyaki</title>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width =device-width, initial-scale =1">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Dancing+Script:wght@500&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <img src="images/logo.png" class="logo">
+        <div id="sideNav">
+            <nav>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">MENU</a></li>
+                    <li><a href="#">ORDER</a></li>
+                    <li><a href="#">CART</a></li>
+                    <li><a href="#">LOGIN</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="menuBtn" onclick="validate()">
+            <img src="images/menu.png" id="menu">
+        </div>
+        <script type="text/javascript">
+            var menuBtn = document.getElementById("menuBtn")
+            var sideNav = document.getElementById("sideNav")
+            var menu = document.getElementById("menu")
+            sideNav.style.right = "-250px";
 
-<html> <!-- the root element of an HTML page -->
- 
-    <head> <!-- contains meta information about the HTML page -->
-        <title>Hello World</title>
-
-        <!-- <link rel="stylesheet" type="text/css" href="styles/site.css" />
-        <style>
-            h1 {
-              color: orange;
+            function validate(){
+                if(sideNav.style.right == "-250px"){
+                    sideNav.style.right = "0";
+                    menu.src = "images/close.png";
+                }
+                else {
+                    sideNav.style.right = "-250px";
+                    menu.src = "images/menu.png";
+                }
             }
-        </style> -->
+        </script>
 
+      
         
     </head>
-
-    <body> <!-- defines the document's body, and is a container for all the visible contents -->
-
-        <div>
-            <h1>My First <span id="theheading" class="info ignore">Heading</span></h1>
-            <p>My first paragraph.<br />I am on a <span class="info">new line</span> within this paragraph</p>
-            <div>
-                <ul class="info">
-                    <li class="even"><a href="js example.html">JavaScript Example</a></li>
-                    <li class="odd"><a href="jQuery example.html">JQuery Example</a></li>
-                    <li class="even"><a href="bootstrap example.html">Bootstrap Example</a></li>
-                    <li class="odd"><a href="/node">Node.js Endpoint Example</a></li>
-                </ul>
+    <body>
+        <section id="main">
+            <div class="restaurant-text">
+                <h1>Bonsai Wok Teriyaki</h1>
+                <p>We make food that makes you come back for more</p>
+                <div class="order-btn">
+                    <a href="#"><span></span>Order Now</a>
+                </div>
             </div>
-            <p>
-                <span id="uwt">UW Tacoma</span> is an urban-serving university providing access to students in a 
-                way that transforms families and communities. We impact and inform economic 
-                development through community-engaged <span class="info bold ignore">students and faculty</span>. We conduct research 
-                that is of direct use to our community and region.
-            </p>
-            <p>Change in class.</p>
-            <a href="images/UWT.jpg"><img src="images/UWT.jpg" alt="UWT Stairs" width="500" height="333" /></a>
-        </div>
+        </section>
+
+        <!--Menu-->
+        <section id="home-menu">
+            <div class="home-menu-box">
+                <div class="single-item">
+                    <img src="images/chicken-teriyaki.png">
+                    <div class="overlay"></div>
+                    <div class="food-desc">
+                        <h3>Chicken Teriyaki</h3>
+                        <hr>
+                        <p>chicken, rice.........</p>
+                    </div>
+                </div>
+                <div class="single-item">
+                    <img src="images/beef-and-shrimp-teriyaki.png">
+                    <div class="overlay"></div>
+                    <div class="food-desc">
+                        <h3>Beef and Shrimp Teriyaki</h3>
+                        <hr>
+                        <p>chicken, rice.........</p>
+                    </div>
+                </div>                    
+                <div class="single-item">
+                    <img src="images/pork-teriyaki.png">
+                    <div class="overlay"></div>
+                    <div class="food-desc">
+                        <h3>Pork Teriyaki</h3>
+                        <hr>
+                        <p>chicken, rice.........</p>
+                    </div>
+                </div>
+                <div class="single-item">
+                    <img src="images/pork-teriyaki.png">
+                    <div class="overlay"></div>
+                    <div class="food-desc">
+                        <h3>Pork Teriyaki</h3>
+                        <hr>
+                        <p>chicken, rice.........</p>
+                    </div>
+                </div>
+                <div class="single-item">
+                    <img src="images/pork-teriyaki.png">
+                    <div class="overlay"></div>
+                    <div class="food-desc">
+                        <h3>Pork Teriyaki</h3>
+                        <hr>
+                        <p>chicken, rice.........</p>
+                    </div>
+                </div>
+                <div class="single-item">
+                    <img src="images/pork-teriyaki.png">
+                    <div class="overlay"></div>
+                    <div class="food-desc">
+                        <h3>Pork Teriyaki</h3>
+                        <hr>
+                        <p>chicken, rice.........</p>
+                    </div>
+                </div>
+                <div class="order-step">
+                    <img src="images/steps.png">
+                    <p>Real food, made-to-order, with fresh, high quality ingredients, 
+                        that makes you feel like a million bucks and satisfies your craving. 
+                        So what are you going to eat today? Something awesome, if you’re here.</p>
+                    <div class="menu-btn">
+                        <a href="#"><span></span>Discover Menu</a>
+                    </div>
+                </div>
+            </div>
+            
+
+        </section>
+
+        <!--About Us-->
+        <section id="about-us">
+            <div class="title-text">
+                <p>ABOUT US</p>
+            </div>
+        </section>
+        
+
+         <!--Feedback-->
+         <section id="feedback">
+            <div class="title-text">
+                <h1>What Customer Says?</h1>
+            </div>
+            <div class="feedback-row">
+                <div class="feedback-col">
+                    <div class="user">
+                        <img src="images/feedback1.png">
+                        <div class="user-info">
+                            <h4>Andrea M.   <i class="fa fa-yelp"></i></h4>
+                        </div>
+                    </div>
+                    <p>I started eating here in high school and continue 
+                        to eat here every single visit home.  I generally get the 
+                        Katsu or Katsu/teriyaki combo.  Pro tip: always get extra 
+                        salad dressing.  It's good on everything!</p>
+                </div>
+                <div class="feedback-col">
+                    <div class="user">
+                        <img src="images/feedback2.png">
+                        <div class="user-info">
+                            <h4>Dawn R.   <i class="fa fa-yelp"></i></h4>
+                        </div>
+                    </div>
+                    <p>WoW!!!! What can I say about the place? It was the best 
+                        Teriyaki place I have ever been. Seated right away, 
+                        server was attentive, good portions for a decent price, 
+                        and really relaxed atmosphere. Chicken was grilled to 
+                        perfection, rice was good, potstickers were fantastic, 
+                        and salad made my mouth water. If your on a time crunch 
+                        with an hour lunch this would be the place I would choose 
+                        to spend it. Friendliest staff around. If you like you can 
+                        order ahead as we seen alot of people picking up their food 
+                        to go. This might just be our new favorite place in Tumwater.</p>
+                </div>
+                <div class="feedback-col">
+                    <div class="user">
+                        <img src="images/feedback3.png">
+                        <div class="user-info">
+                            <h4>Alaina W.   <i class="fa fa-yelp"></i></h4>
+                        </div>
+                    </div>
+                    <p>Shrimp fried rice and Mongolian beef snobs here. 
+                        We FINALLY found a restaurant that does it right! 
+                        I ordered to go in person. Friendly & helpful staff, 
+                        clean restaurant with a bookshelf and lots of cool 
+                        pictures up. In my hand less than 10 minutes after 
+                        ordering, and this sweet lady even brought it out to 
+                        my car! Excellent customer service, food, and speed. 
+                        Worth your time to check this place out. You're welcome.</p>
+                </div>
+            </div>
+        </section>
+        <!--Information-->
+        <section id="information">
+            <div class="title-text">
+                <p>CONTACT</p>
+                <h1> Visit Our Restaurant Today</h1>
+            </div>
+            <div class="information-row">
+                <div class="information-left">
+                    <h1>Opening Hours</h1>
+                    <p><i class="fa fa-clock-o"></i> Monday to Saturday - 11AM to 9PM</p>
+                    <h1>Address</h1>
+                    <p><i class="fa fa-map-marker"></i> 408 Cleveland Ave SE # 107, Tumwater, WA 98501</p>
+                    <h1>Phone</h1>
+                    <p><i class="fa fa-phone"></i> (360) 753-0719</p>
+                </div>
+                <div class="information-right">
+                    <div class="mapouter"><div class="gmap_canvas">
+                        <iframe width="600" height="500" id="gmap_canvas" 
+                        src="https://maps.google.com/maps?q=408%20Cleveland%20Ave%20SE%20&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                        <a href="https://123movies-to.org"></a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style>
+                        <a href="https://www.embedgooglemap.net">embed map html</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}
+                        </style></div></div>
+                </div>
+                
+            </div>
+            
+            
+        </section>
 
     </body>
-
 </html>
