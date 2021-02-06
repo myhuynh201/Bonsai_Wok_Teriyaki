@@ -49,7 +49,7 @@ nav ul li a{
     }
 }
 #main{
-    background: linear-gradient(rgba(0,0,0,0),#ac2909),url(images/background.jpg);
+    background: linear-gradient(rgba(0,0,0,0),#ac2909),url(../../images/background.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -285,7 +285,7 @@ hr{
     transform: translateY(-7px)
 }
 
-/*--Information--*/
+/*--Footer--*/
 #information{
     padding: 100px 0 20px;
     background: #efefef;
