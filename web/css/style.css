@@ -415,7 +415,7 @@ hr{
 }
 .form-box{
     width: 380px;
-    height: 480px;
+    height: 500px;
     position: relative;
     margin: 6% auto;
     background: #fff;
@@ -506,4 +506,127 @@ span{
 #register{
     left: 450px;
     
+}
+
+/*--Menu Page--*/
+#menu-main{
+    background: #ac2909;
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+}
+.main-text{
+    text-align: center;
+    color: #ac2909;
+    padding-top: 350px;
+    
+}
+.main-text h1{
+    font-size: 50px;
+    font-family: 'Dancing Script', cursive;
+    font-style: italic;
+    
+}
+.main-text h2{
+    font-size: 30px;   
+}
+.main-text h3{
+    font-size: 30px;   
+}
+.main-text h2{
+    font-size: 30px;   
+}
+.order-btn-menu{
+    color: blanchedalmond;
+    width: 10%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #df3106, #ffad06);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+#order-step-on-menu{
+    margin-top: 200px;
+    text-align: center;
+}
+.menu-box{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 60px 20px 20px 20px;
+}
+.single-menu-item {
+    flex-basis: 30%;
+    text-align: center;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    color: #fff;
+    position: relative;
+}
+.single-menu-item h1{
+    color: #ac2909;
+    font-size: 30px;
+}
+
+.single-menu-item h2{
+    color: rgb(150, 173, 20);
+    font-size: 30px;
+}
+
+.single-menu-item p{
+    margin-top: 40px;
+    color: black;
+    font-size: 25px;
+}
+.single-menu-item img{
+    width: 300px;
+    margin-top: 50px;
+    margin-right: 20px;
+    border-radius: 3px;
+}
+@media screen and (max-width: 770px){
+    #menu-main{
+        height: 120px;
+    }
+    .main-text{
+        padding-top: 150px;   
+    }
+    .main-text h1{
+        font-size: 30px;      
+    }
+    .main-text h2{
+        font-size: 15px;   
+    } 
+    .main-text h3{
+        font-size: 20px;   
+    } 
+    .order-btn-menu{
+        width: 40%;
+    }
+
+    .menu-box{
+        width: 100%;
+    }
+    .single-menu-item {
+        flex-basis: 30%;
+    }
+    .single-menu-item h1{
+        font-size: 20px;
+    }
+    
+    .single-menu-item h2{
+        font-size: 20px;
+    }
+    
+    .single-menu-item p{
+        font-size: 15px;
+    }
+    .single-menu-item img{
+        width: 300px;
+    }
+
 }

@@ -1,0 +1,176 @@
+<html>
+    <head>
+        <title>Menu</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Dancing+Script:wght@500&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        
+        <img src="images/logo.png" class="logo">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <div id="sideNav">
+            <nav>
+                <ul>
+                    <li><i class="fa fa-home"></i><a href="index.html">HOME</a></li>
+                    <li><i class="fa fa-book"></i><a href="menu.html">MENU</a></li>
+                    <li><i class="fa fa-cutlery"></i><a href="order.html">ORDER</a></li>
+                    <li><i class="fa fa-shopping-cart"></i><a href="cart.html">CART</a></li>
+                    <li><i class="fa fa-sign-in"></i><a href="login_registration.html">LOGIN</a></li>
+                </ul>
+            </nav>
+            </div>
+            
+
+        <div id="menuBtn" onclick="validate()">
+            <img src="images/menu.png" id="menu">
+        </div>
+        <script type="text/javascript">
+            var menuBtn = document.getElementById("menuBtn")
+            var sideNav = document.getElementById("sideNav")
+            var menu = document.getElementById("menu")
+            sideNav.style.right = "-250px";
+
+            function validate(){
+                if(sideNav.style.right == "-250px"){
+                    sideNav.style.right = "0";
+                    menu.src = "images/close.png";
+                }
+                else {
+                    sideNav.style.right = "-250px";
+                    menu.src = "images/menu.png";
+                }
+            }
+        </script>
+    
+    </head>
+    <body>
+        <section id="menu-main">
+            <div class="main-text">
+                <h1>Create Your Perfect Plate of Teriyaki</h1>
+                <h2>Skip the line and reduce your contact!</h2> 
+                <button onclick="location.href='order.html'" type="button" class="order-btn-menu">
+                    ORDER ONLINE</button>
+                <h2>Or:</h2>
+                <h3>Place a phone order!</h3>
+                <h3>Call us at </h3>
+                <h3> (360) 753-0719</h3>
+            </div>
+        </section>
+
+        <section id="order-step-on-menu">
+            <div class="main-text">
+                <h1>Create Your Own Plate</h1>
+            </div>
+            <div class="menu-box">
+                <div class="single-menu-item">
+                    <h1>Step 1</h1>                  
+                </div>
+                <div class="single-menu-item">
+                        <h2>Choose Your Size</h2>
+                        <p>Small</p><br />
+                        <p>Medium</p><br />
+                        <p>Large</p><br />
+                </div>
+                <div class="single-menu-item">
+                    <img src="images/feedback1.png">
+                </div>
+                <div class="single-menu-item">
+                    <h1>Step 2</h1>
+                </div>
+                <div class="single-menu-item">
+                    <h2>Choose Your Base</h2>
+                    <p>Brown Rice</p><br />
+                    <p>White Rice</p><br />
+                    <p>Fried Rice</p><br />
+                </div>
+                <div class="single-menu-item">
+                    <img src="images/feedback1.png">
+                </div>
+
+                <div class="single-menu-item">
+                    <h1>Step 3</h1>
+                </div>
+                <div class="single-menu-item">
+                    <h2>Choose Your Proteins</h2>
+                    <p>Chiken</p><br />
+                    <p>Beef</p><br />
+                    <p>Pork</p><br />
+                    <p>Shirmp</p><br />
+                    <p>Tofu</p><br />
+                    <p>Orange Chiken</p><br />
+                    <p>Mongolian Beef</p><br />
+                    <p>Broccoli Beef</p><br />
+                </div>
+                <div class="single-menu-item">
+                    <img src="images/feedback1.png">
+                </div>
+
+
+
+
+                <div class="single-menu-item">
+                    <div class="paragraph-title">
+                        <h1>Step 4</h1>
+                    </div>
+                </div>
+                <div class="single-menu-item">
+                    <div class="paragraph-title">
+                        <h2>Choose Your Speciality</h2>
+                        <p>Gyoza</p><br />
+                        <p>California roll</p><br />
+                        <p>None</p><br />
+                    </div>
+                </div>
+                <div class="single-menu-item">
+                    <img src="images/feedback1.png">
+                </div>
+        </section>
+        
+
+
+
+
+
+
+
+
+
+        
+         
+        <!--Footer-->
+        <section id="information">
+            <div class="title-text">
+                <p>CONTACT</p>
+                <h1> Visit Our Restaurant Today</h1>
+            </div>
+            <div class="information-row">
+                <div class="information-left">
+                    <h1>Opening Hours</h1>
+                    <p><i class="fa fa-clock-o"></i> Monday to Saturday - 11AM to 9PM</p>
+                    <h1>Address</h1>
+                    <p><i class="fa fa-map-marker"></i> 408 Cleveland Ave SE # 107, Tumwater, WA 98501</p>
+                    <h1>Phone</h1>
+                    <p><i class="fa fa-phone"></i> (360) 753-0719</p>
+                </div>
+                <div class="information-right">
+                    <div class="mapouter"><div class="gmap_canvas">
+                        <iframe width="600" height="500" id="gmap_canvas" 
+                        src="https://maps.google.com/maps?q=408%20Cleveland%20Ave%20SE,%20Tumwater,%20WA%2098501&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                        <a href="https://soap2day-to.com"></a><br>
+                        <a href="https://www.embedgooglemap.net"></a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            
+        </section>
+
+    </body>
+    
+</html>
