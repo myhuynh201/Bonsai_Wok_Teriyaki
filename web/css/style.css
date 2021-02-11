@@ -474,7 +474,7 @@ hr{
     border-right: 0;
     border-bottom: 1px solid #999;
     outline: none;
-    background: transparent;
+    background: transparent; 
 }
 .submit-btn{
     width: 85%;
@@ -630,7 +630,7 @@ span{
 }
 
 /*--Order--*/
-.order-box{
+#big-box{
     position: absolute;
     width: 1000px;
     height: 700px;
@@ -639,9 +639,119 @@ span{
     left: 0;
     right: 0;
     margin: auto;
-    background: white;
-    
-    
+    background: white;   
+}
+#leftBox{
+    float: left;
+    width: 60%;
+    height: 100%;
+    background: rgb(248, 222, 222);
+}
+#rightBox{
+    float: right;
+    width: 40%;
+    height: 100%;
+    background: rgb(218, 145, 145);
+    overflow:hidden;
+}
+.form-order-box {
+    width: 100%;
+    height: 75%;
+    background: rgb(218, 145, 145);
+    position: relative;
     
 }
+
+.button-box-order{
+    width: 90%;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #f3581a1f;
+    border-radius: 30px;
+}  
+.toggle-btn-order{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+
+} 
+
+
+#btn-order{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #df444b, #dfc5c5);
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+.order-item-box{
+    height: 65%;
+    width: 90%;
+    position:absolute;
+    margin: auto;
+    overflow: auto;
+    color: black;
+    scrollbar-base-color: gold;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+#current{
+    left: 20px;
+
+}
+#favorites{
+    left: -200px;
+    
+}
+#previous{
+    left: -400px;
+    
+}
+
+.reset-add-to-cart{
+    width: 90%;
+    height: 20%;
+    top: 80%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 30px;
+}
+.order-reset-btn{
+    float: left;
+    color: blanchedalmond;
+    width: 35%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: #df444b;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+.order-add-to-cart-btn{
+    float: right;
+    color: blanchedalmond;
+    width: 55%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: #df444b;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+
+
 

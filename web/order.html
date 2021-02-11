@@ -49,12 +49,93 @@
     <body>
         
         <section id="main">
-            <div class="order-box">
+            <div id="big-box">
+                <div id="leftBox">
+
+
+                </div>
+                <div id="rightBox">
+                    <div class="form-order-box">
+                    <div class="button-box-order">
+                        <div id="btn-order"></div>
+                        <button type="button" class="toggle-btn-order" onclick="current()"> Current</button>
+                        <button type="button" class="toggle-btn-order" onclick="favorites()"> Favorites</button>
+                        <button type="button" class="toggle-btn-order" onclick="previous()"> Previous</button>
+                    </div>
+                    <form id="current" class="order-item-box">
+                  
+                            order item goes here <br />
+                            order item goes here <br />
+                            order item goes here <br />
+                            order item goes here <br />
+                            order item goes here <br />
+                            order item goes here <br />
+
+                        
+                    </form>
+                    <form id="previous" class="order-item-box">
+                        
+                            previous item goes here <br />
+                            previous item goes here <br />
+                            previous item goes here <br />
+                            previous item goes here <br />
+                            previous item goes here <br />
+                            previous item goes here <br />                       
+                    </form>
+
+                    <form id="favorites" class="order-item-box">
+                        
+                        favorites item goes here <br />
+                        favorites item goes here <br />
+                        favorites item goes here <br />
+                        favorites item goes here <br />
+                        favorites item goes here <br />
+                        favorites item goes here <br />                       
+                    </form>
+                </div>
+
+                    
+                    <div class="reset-add-to-cart">
+                        <button onclick="location.href='X'" type="button" class="order-reset-btn">
+                            Reset</button>
+                        <button onclick="location.href='X'" type="button" class="order-add-to-cart-btn">
+                            Add to Cart</button>
+
+                    </div>
+                    
+                </div>
                 
             </div>
         
         
         </section>
+
+        <script>
+            var x = document.getElementById("current");
+            var y = document.getElementById("favorites");
+            var z = document.getElementById("previous");
+            var r = document.getElementById("btn-order");
+
+            function current(){
+                x.style.left="20px";
+                y.style.left="-200px";
+                z.style.left="-400px";
+                r.style.left="0px";
+            }
+            function favorites(){
+                x.style.left="-200px";
+                y.style.left="20px";
+                z.style.left="-400px";
+                r.style.left="110px";
+            }
+
+            function previous(){
+                x.style.left="-200px";
+                y.style.left="-400px";
+                z.style.left="20px";
+                r.style.left="230px";
+            }
+        </script>
 
 
     </body>
