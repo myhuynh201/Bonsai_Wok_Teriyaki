@@ -950,7 +950,6 @@ td:last-child{
     width: 30%;
     padding: 10px 30px;
     cursor: pointer;
-    display: inline-block;
     background: #ff523b;
     border: 0;
     outline: none;
@@ -976,6 +975,9 @@ td:last-child{
     }
     td:last-child{
         text-align: right;
+    }
+    .cart-btn{
+        width: 100%;
     }
 }
 
