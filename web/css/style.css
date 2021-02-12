@@ -940,7 +940,23 @@ td:last-child{
     font-size: 25px;
       color:red;
   }
-
+.cart-page-btn {
+    display: inline-block;
+    
+}
+.cart-btn{
+    margin-top: 40px;
+    color: white;
+    width: 30%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: inline-block;
+    background: #ff523b;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    float:right;
+}
 @media screen and (max-width: 770px){
     .cart-page{
         margin: 150px auto;
