@@ -33,9 +33,9 @@ function total() {
 }
 
 function sizePrice(sizeInput) {
-    if(sizeInput == "6") {
+    if(sizeInput == "small") {
         return 6
-    } else if(sizeInput == "7") {
+    } else if(sizeInput == "medium") {
         return 7
     } else {
         return 9
@@ -43,7 +43,7 @@ function sizePrice(sizeInput) {
 }
 
 function ricePrice(riceInput) {
-    if(riceInput == "0") {
+    if(riceInput == "white-rice") {
         return 0
     } else {
         return 1
@@ -51,9 +51,9 @@ function ricePrice(riceInput) {
 }
 
 function proteinPrice(proteinInput) {
-    if(proteinInput == "0") {
+    if(proteinInput == "chicken") {
         return 0
-    } else if(proteinInput == "1") {
+    } else if((proteinInput == "chicken-breast")||(proteinInput == "katsu")) {
         return 1
     } else {
         return 2
@@ -79,4 +79,82 @@ function order() {
     for(i = 0; i < sideInput.length; i++) {
         console.log(sideInput[i]);
     }    
+}
+
+function addfavorite() {
+    let total = 0
+
+    let sizeInput = document.querySelector('input[name = "size"]:checked').value;
+    let sizeCost = sizePrice(sizeInput)
+    console.log("Size Cost: " + sizeCost)
+    total += sizeCost
+
+    let riceInput = document.querySelector('input[name = "rice"]:checked').value;
+    let riceCost = ricePrice(riceInput)
+    console.log("Rice Cost: " + riceCost)
+    total += riceCost
+
+    let proteinInput = document.querySelector('input[name = "protein"]:checked').value;
+    let proteinCost = proteinPrice(proteinInput)
+    console.log("Protein Cost: " + proteinCost)
+    total += proteinCost
+
+    var sideInput = [];
+    $("input:checkbox[name=side]:checked").each(function(){
+        sideInput.push($(this).val());
+    });
+    console.log(sideInput.length)
+    total += sideInput.length * 4
+
+    var x = document.getElementById("favor").value;
+    document.getElementById("favorites").innerHTML += "[" + x + "]: $" + total + "<br>";
+}
+
+function addtoCart() {
+    let total = 0
+
+    let sizeInput = document.querySelector('input[name = "size"]:checked').value;
+    let sizeCost = sizePrice(sizeInput)
+    console.log("Size Cost: " + sizeCost)
+    total += sizeCost
+
+    let riceInput = document.querySelector('input[name = "rice"]:checked').value;
+    let riceCost = ricePrice(riceInput)
+    console.log("Rice Cost: " + riceCost)
+    total += riceCost
+
+    let proteinInput = document.querySelector('input[name = "protein"]:checked').value;
+    let proteinCost = proteinPrice(proteinInput)
+    console.log("Protein Cost: " + proteinCost)
+    total += proteinCost
+
+    var sideInput = [];
+    $("input:checkbox[name=side]:checked").each(function(){
+        sideInput.push($(this).val());
+    });
+    console.log(sideInput.length)
+    total += sideInput.length * 4
+
+    var x = document.getElementById("favor").value;
+
+    var button = 
+
+    document.getElementById("current").innerHTML +=  
+
+    "[" + sizeInput + ", " + riceInput + ", " + proteinInput + ", " + sideInput  + "]: $" + total +"    "+ "</label>" + 
+    '<button type="button" class="delete-btn" onclick="deleteItem()"> Delete</button>' +    
+    "<br>";
+}
+
+function resetCart() {
+    document.getElementById("current").innerHTML = "order item goes here <br>"
+}
+
+function movetoCart() {
+    var x = document.getElementById("current").value;
+    document.getElementById("cart-item").innerHTML = x
+}
+
+function deleteItem() {
+
 }
