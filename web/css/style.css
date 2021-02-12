@@ -633,8 +633,8 @@ span{
 #big-box{
     position: absolute;
     width: 1000px;
-    height: 700px;
-    top: 0;
+    height: 850px;
+    top: 100;
     bottom: 0;
     left: 0;
     right: 0;
@@ -716,6 +716,7 @@ span{
     
 }
 
+
 .reset-add-to-cart{
     width: 90%;
     height: 20%;
@@ -726,14 +727,28 @@ span{
     margin: auto;
     padding: 30px;
 }
-.order-reset-btn{
+
+.to-cart-btn{
     float: left;
     color: blanchedalmond;
-    width: 35%;
+    width: 40%;
     padding: 10px 30px;
     cursor: pointer;
     display: block;
-    margin: auto;
+    margin: 1px;
+    background: #df444b;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+.order-reset-btn{
+    float: left;
+    color: blanchedalmond;
+    width: 40%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: 1px;
     background: #df444b;
     border: 0;
     outline: none;
@@ -746,7 +761,7 @@ span{
     padding: 10px 30px;
     cursor: pointer;
     display: block;
-    margin: auto;
+    margin: 1px;
     background: #df444b;
     border: 0;
     outline: none;

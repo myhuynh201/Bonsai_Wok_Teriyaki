@@ -8,6 +8,7 @@
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="./scripts/js/order.js"></script>
         
         <img src="images/logo.png" class="logo">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,9 +52,131 @@
         <section id="main">
             <div id="big-box">
                 <div id="leftBox">
+                    <div class="order-head" style = "text-align: center;">
+                        <h1> Create your own plate! </h1>
+                    </div>
+                    
+                    <fieldset class="form-group" style="text-align: center;">
+                        <div class="form-check">
+                            <h2 style = "font-size:25px;"> Size </h2>
+                            <input class="form-check-input" type="radio" name="size" id="size1" value="6" onclick="total()" checked>
+                            <label class="form-check-label" for="size1">
+                             Small ($6)
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="size" id="size2" value="7" onclick="total()">
+                            <label class="form-check-label" for="size2">
+                             Medium ($7)
+                            </label>
+                        </div>
+                        <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" name="size" id="size3" value="8" onclick="total()">
+                            <label class="form-check-label" for="size3">
+                             Large ($9)
+                            </label>
+                        </div>    
+                     </fieldset>
 
-
+                     <fieldset class="form-group" style="text-align: center;">
+                        <div class="form-check">
+                            <h2 style = "font-size:25px;"> Rice </h2>
+                            <input class="form-check-input" type="radio" name="rice" id="rice1" value="0" onclick="total()" checked>
+                            <label class="form-check-label" for="rice1">
+                             White Rice 
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="rice" id="rice2" value="1" onclick="total()">
+                            <label class="form-check-label" for="rice2">
+                             Brown Rice (+$1)
+                            </label>
+                        </div>
+                        <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" name="rice" id="rice3" value="1" onclick="total()">
+                            <label class="form-check-label" for="rice3">
+                             Fried Rice (+$1)
+                            </label>
+                        </div>    
+                     </fieldset>
+                     <fieldset class="form-group" style="text-align: center;">
+                        <div class="form-check">
+                            <h2 style = "font-size:25px;"> Protein </h2>
+                            <input class="form-check-input" type="radio" name="protein" id="protein1" value="0" onclick="total()" checked>
+                            <label class="form-check-label" for="protein1">
+                             Chicken 
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="protein" id="protein2" value="1" onclick="total()">
+                            <label class="form-check-label" for="protein2">
+                             Chicken Breast (+$1)
+                            </label>
+                        </div>
+                        <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" name="protein" id="protein3" value="1" onclick="total()">
+                            <label class="form-check-label" for="protein3">
+                             Katsu (+$1)
+                            </label>
+                        </div>   
+                        <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" name="protein" id="protein4" value="2" onclick="total()">
+                            <label class="form-check-label" for="protein4">
+                             Shrimp (+$2)
+                            </label>
+                        </div>  
+                        <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" name="protein" id="protein5" value="2" onclick="total()">
+                            <label class="form-check-label" for="protein5">
+                             Bulgogi (+$2)
+                            </label>
+                        </div>  
+                        <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" name="protein" id="protein6" value="2" onclick="total()">
+                            <label class="form-check-label" for="protein6">
+                             Orange Chicken (+$2)
+                            </label>
+                        </div>  
+                        <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" name="protein" id="protein7" value="2" onclick="total()">
+                            <label class="form-check-label" for="protein7">
+                             Mongolian Beef (+$2)
+                            </label>
+                        </div>  
+                        <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" name="protein" id="protein8" value="2" onclick="total()">
+                            <label class="form-check-label" for="protein8">
+                             Katsu (+$1)
+                            </label>
+                        </div>   
+                     </fieldset>
+                     
+                     <fieldset class="form-group" style="text-align: center;">
+                        <h2 style = "font-size:25px;"> Side </h2>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="side" value="4" id="Side1"  onclick="total()">
+                            <label class="form-check-label" for="Side1">
+                              Eggroll (+$4)
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="side" value="4" id="Side2"  onclick="total()">
+                            <label class="form-check-label" for="Side2">
+                              Gyoza (+$4)
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="side" value="5" id="Side3"  onclick="total()">
+                            <label class="form-check-label" for="Side3">
+                              California roll (+$4)
+                            </label>
+                          </div>
+                            
+                     </fieldset>
+                     
+                <p id="subTotal" style="font-size: large; text-align:center;"> Total Price: $6</p>
                 </div>
+ 
                 <div id="rightBox">
                     <div class="form-order-box">
                     <div class="button-box-order">
@@ -64,7 +187,9 @@
                     </div>
                     <form id="current" class="order-item-box">
                   
-                            order item goes here <br />
+                        <!--return list of saved order Item-->   
+                        
+                        order item goes here <br />
                             order item goes here <br />
                             order item goes here <br />
                             order item goes here <br />
@@ -74,13 +199,9 @@
                         
                     </form>
                     <form id="previous" class="order-item-box">
-                        
+                        <!--return list of ordered item, hard code it-->
                             previous item goes here <br />
-                            previous item goes here <br />
-                            previous item goes here <br />
-                            previous item goes here <br />
-                            previous item goes here <br />
-                            previous item goes here <br />                       
+                       
                     </form>
 
                     <form id="favorites" class="order-item-box">
@@ -96,13 +217,18 @@
 
                     
                     <div class="reset-add-to-cart">
-                        <button onclick="location.href='X'" type="button" class="order-reset-btn">
-                            Reset</button>
-                        <button onclick="location.href='X'" type="button" class="order-add-to-cart-btn">
-                            Add to Cart</button>
-
+                        <button type="button" class="order-reset-btn" onclick="resetCart()">
+                            Reset</button>                        
+                        <button type="button" class="order-add-to-cart-btn" onclick="addtoCart()">
+                            Add to Cart</button>    
+                        <button  type="button" class="order-reset-btn" onclick="document.location='cart.html'">
+                            To Cart</button>                        
+                        <button type="button" class="order-add-to-cart-btn" onclick="addtoCart()">
+                            Add Favorite</button>    
                     </div>
-                    
+
+                        
+
                 </div>
                 
             </div>
