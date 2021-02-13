@@ -8,7 +8,9 @@
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Carter+One&display=swap" rel="stylesheet">
+        <script src="./scripts/login.js"></script>
         <img src="images/logo.png" class="logo">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <div id="sideNav">
@@ -18,10 +20,88 @@
                     <li><i class="fa fa-book"></i><a href="menu.html">MENU</a></li>
                     <li><i class="fa fa-cutlery"></i><a href="order.html">ORDER</a></li>
                     <li><i class="fa fa-shopping-cart"></i><a href="cart.html">CART</a></li>
-                    <li><i class="fa fa-sign-in"></i><a href="login_registration.html">LOGIN</a></li>
+                    <li class="nav-item active">
+                        <button type="button" class="btn" data-toggle="modal" data-target="#mySignInModal" style="background-color: red; color: white">Sign In</button>
+                    </li>
                 </ul>
             </nav>
             </div>
+  <div id="mySignInModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Bonsai Wok Teriyaki</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+              <div class="modal-body">
+                <form onsubmit="return checkSignForm(this);">
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="emailSign" style="width:460px;" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+                  </div>
+                  <div class="form-group">
+                    <p> 
+                    <label for="pwd">Password<a href="register.html" style="margin-left: 16.0em; color: grey;"> Forgot Password?</a></label>
+                    </p>
+                      <input 
+                        type="password" 
+                        class="form-control" 
+                        id="pwdSign" 
+                        style="width:460px;" 
+                      >
+                  </div>
+                  <div class="checkbox">
+                    <p> 
+                      Do not have Account?<a data-toggle="modal" href="#mySignUpModal"> Sign Up</a>
+                      <label style="margin-left: 6.0em;"><input type="checkbox"> Remember me</label>
+                    </p>
+                  </div>
+                  <button type="submit" class="btn" style="width:460px; background-color: red; color: white">Sign In</button>
+              </form>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div id="mySignUpModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Create Account</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+              <div class="modal-body">
+                <form onsubmit="return checkRegForm(this);">
+                  <div class="form-group">
+                    <label for="firstName">First Name <label for="lastName" style="margin-left: 20em;">Last Name</label></label>
+                    <table>
+                      <tr>
+                        <td><input type="firstName" class="form-control" id="firstName" style="width:230px;" pattern=".{1,}$" required></td>
+                        <td><input type="lastName" class="form-control" id="lastName" style="width:230px;" pattern=".{1,}$" required></td>
+                      </tr>
+                    </table>
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="emailReg" style="width:460px;" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="pwd">Password</label>
+                    <input 
+                      type="password" 
+                      class="form-control" 
+                      id="pwdReg" 
+                      style="width:460px;" 
+                      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                      title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required
+                    >
+                    <label for="cnfpwd">Confirm Password</label>
+                    <input type="password" class="form-control" id="cnfpwd" style="width:460px;">
+                  </div>
+                  <button type="submit" class="btn" style="width:460px; background-color: red; color: white">Sign Up</button>
+                </form>
+          </div>
+        </div>
+    </div>
+  </div>
             
 
         <div id="menuBtn" onclick="validate()">
@@ -198,7 +278,7 @@
                 
             </div>
             
-        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         </section>
 
     </body>
