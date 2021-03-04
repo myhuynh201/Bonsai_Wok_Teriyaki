@@ -10,7 +10,8 @@
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Carter+One&display=swap" rel="stylesheet">
-        <script src="./scripts/login.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
         <img src="images/logo.png" class="logo">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <div id="sideNav">
@@ -25,7 +26,108 @@
                     </li>
                 </ul>
             </nav>
-            </div>
+        </div>
+
+        <script type="text/JavaScript">
+
+          async function sign_in() {
+
+              let encoded = window.btoa($("#emailSign").val() + ':' + $("#pwdSign").val())
+
+              console.log($("#emailSign").val() + ':' + $("#pwdSign").val())
+              console.log(encoded)
+
+              let response = await fetch("/auth",  {
+                  method: 'GET',
+                  headers: {
+                      'Authorization': 'Basic ' + encoded
+                  }
+              })
+              if (response.ok) { // if HTTP-status is 200-299
+                  // get the response body (the method explained below)
+                  let json = await response.json()
+                  console.log(json)
+
+                  if (json.success) {
+
+                      console.log(document.cookie)
+                      window.location="menu.html"
+                  }
+              } else {
+                  alert("HTTP-Error: " + response.status)
+                  console.log(response.status)
+                  let json = await response.json()
+                  console.log(json)
+              }
+          }
+
+          async function getOrdersFromHeader(jwt) {
+              console.log(jwt)
+              let response = await fetch("/orders",  {
+                  method: 'GET',
+                  headers: {
+                      'Authorization': 'Bearer ' + jwt
+                  }
+              })
+              if (response.ok) { // if HTTP-status is 200-299
+                  // get the response body (the method explained below)
+                  let json = await response.json()
+                  console.log(json)
+
+
+              } else {
+                  alert("HTTP-Error: " + response.status)
+                  console.log(response.status)
+                  let json = await response.json()
+                  console.log(json)
+              }
+          }
+
+          async function deleteCookie() {
+              let response = await fetch("/auth/",  {
+                  method: 'DELETE'
+              })
+              if (response.ok) { // if HTTP-status is 200-299
+                  // get the response body (the method explained below)
+                  let json = await response.json()
+                  console.log(json)
+
+
+              } else {
+                  alert("HTTP-Error: " + response.status)
+                  console.log(response.status)
+                  let json = await response.json()
+                  console.log(json)
+              }
+          }
+
+          async function getOrdersFromCookie() {
+              let response = await fetch("/cookie_orders",  {
+                  method: 'GET'
+              })
+              if (response.ok) { // if HTTP-status is 200-299
+                  // get the response body (the method explained below)
+                  let json = await response.json()
+                  console.log(json)
+
+
+              } else {
+                  alert("HTTP-Error: " + response.status)
+                  console.log(response.status)
+                  let json = await response.json()
+                  console.log(json)
+              }
+          }
+
+          $(document).ready(function(){
+              $("#butt").click(sign_in)
+          })
+
+
+
+      </script>
+
+
   <div id="mySignInModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -56,7 +158,7 @@
                       <label style="margin-left: 6.0em;"><input type="checkbox"> Remember me</label>
                     </p>
                   </div>
-                  <button type="submit" class="btn" style="width:460px; background-color: red; color: white">Sign In</button>
+                  <button type="submit" class="btn" id="butt" style="width:460px; background-color: red; color: white">Sign In</button>
               </form>
           </div>
         </div>
@@ -134,15 +236,16 @@
 
         
     </head>
+    <body>
         <section id="menu-main">
             <div  class = "main-text">
-                <h1>Create Your Perfect Plate of Teriyaki</h1>
-                <h2>Skip the line and reduce your contact!</h2> 
+                <h1>Create Your Perfect Plate of Teriyaki</h1><br />
+                <h2>Skip the line and reduce your contact!</h2> <br />
                 <button onclick="location.href='order.html'" type="button" class="order-btn-menu">
-                    ORDER ONLINE</button>
-                <h2>Or:</h2>
-                <h3>Place a phone order!</h3>
-                <h3>Call us at </h3>
+                    ORDER ONLINE</button> <br />
+                <h2>Or:</h2> <br />
+                <h3>Place a phone order!</h3> <br />
+                <h3>Call us at </h3> <br />
                 <h3> (360) 753-0719</h3>
             </div>
         </section>
