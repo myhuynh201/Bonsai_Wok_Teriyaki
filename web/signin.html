@@ -1,0 +1,185 @@
+<html>
+    <head>
+        <title> signin and registration </title>
+        <link rel = "styleshee" href="style.css">
+        <title>Order</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Dancing+Script:wght@500&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="./scripts/login.js"></script>
+
+        <script type="text/JavaScript">
+
+            async function sign_in() {
+
+                let encoded = window.btoa($("#uname").val() + ':' + $("#pwd").val())
+
+                console.log($("#uname").val() + ':' + $("#pwd").val())
+                console.log(encoded)
+
+                let response = await fetch("/auth",  {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': 'Basic ' + encoded
+                    }
+                })
+                if (response.ok) { // if HTTP-status is 200-299
+                    // get the response body (the method explained below)
+                    let json = await response.json()
+                    console.log(json)
+
+                    if (json.success) {
+                        document.location.href="order.html";
+                        console.log(document.cookie)
+                    }
+                } else {
+                    alert("HTTP-Error: " + response.status)
+                    console.log(response.status)
+                    let json = await response.json()
+                    console.log(json)
+                }
+            }
+            
+            async function register_in() {
+
+                const first = $("#fname").val();
+                const last = $("#lname").val();
+                const email = $("#email").val();
+                const password = $("#password").val();
+                const password2 = $("#password2").val();
+
+                if(password === password2){
+                    let response = await fetch("/auth",  {
+                    method: 'POST',
+                    headers: {
+                        "first": first,
+                        "last": last,
+                        "email":email,
+                        "password": password
+                    }
+                })
+                    if (response.ok) { // if HTTP-status is 200-299
+                        // get the response body (the method explained below)
+                        let json = await response.json()
+                        console.log(json)
+
+                        if (json.success) {
+                            document.location.href="signin.html";
+                            console.log(document.cookie)
+                        }
+                    } else {
+                        alert("HTTP-Error: " + response.status)
+                        console.log(response.status)
+                        let json = await response.json()
+                        console.log(json)
+                    }
+                } else {
+                    alert("HTTP-Error: " + response.status)
+                    console.log(response.status)
+                    let json = await response.json()
+                    console.log(json)
+                }
+            }
+
+            $(document).ready(function() {
+                $("#butt").click(sign_in)
+            })
+        
+
+            $(document).ready(function() {
+                $("#butt2").click(register_in)
+            })
+        </script>
+
+
+        
+        <img src="images/logo.png" class="logo">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <div id="sideNav">
+            <nav>
+                <ul>
+                    <li><i class="fa fa-home"></i><a href="index.html">HOME</a></li>
+                    <li><i class="fa fa-book"></i><a href="menu.html">MENU</a></li>
+                    <li><i class="fa fa-cutlery"></i><a href="order.html">ORDER</a></li>
+                    <li><i class="fa fa-shopping-cart"></i><a href="cart.html">CART</a></li>
+                    <li><i class="fa fa-signin"></i><a href="signin.html">SIGN IN</a></li>
+                </ul>
+            </nav>
+            </div>
+            
+
+        <div id="menuBtn" onclick="validate()">
+            <img src="images/menu.png" id="menu">
+        </div>
+        <script type="text/javascript">
+            var menuBtn = document.getElementById("menuBtn")
+            var sideNav = document.getElementById("sideNav")
+            var menu = document.getElementById("menu")
+            sideNav.style.right = "-250px";
+
+            function validate(){
+                if(sideNav.style.right == "-250px"){
+                    sideNav.style.right = "0";
+                    menu.src = "images/close.png";
+                }
+                else {
+                    sideNav.style.right = "-250px";
+                    menu.src = "images/menu.png";
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <section id="main">
+            
+                <div class = "login-page">
+                    <div class = "form">
+                        <form class ="register-form">
+                            <input type ="text" placeholder ="first name" id="fname"/>
+                            <input type ="text" placeholder ="last name" id="lname"/>
+                            <input type ="text" placeholder ="email address" id="email"/>
+                            <input type ="text" placeholder ="password" id="password"/>
+                            <input type ="text" placeholder ="confirmed password" id="password2"/>
+                            <button type="button" id="butt2"> register </button>
+                            <p class= "message">Already Registered? <a href="#">Login</a> 
+                            </p>
+                        </form>
+        
+                        <form class="login-form" id="form">
+                            <input type="text" placeholder = "email address" id="uname"/>
+                            <input type="text" placeholder = "password" id="pwd"/>
+                            <button type="button" id="butt"> login</button>
+                            <p class = "message">Not Registered? <a href="#">Register</a>
+                            </p>
+                        </form>
+        
+        
+                    </div>
+                </div>
+                
+            
+        </section>
+
+        
+
+        <script src='https://code.jquery.com/jquery-3.2.1.min.js'> </script>
+
+        <script>
+        $('.message a').click(function() {
+        $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+        });
+
+            
+        </script>
+
+
+    </body>
+
+    </head>
+</html>

@@ -108,6 +108,7 @@ function addfavorite() {
 
     var x = document.getElementById("favor").value;
     document.getElementById("favorites").innerHTML += "[" + x + "]: $" + total + "<br>";
+    // add name of the order and the details in the favorite
 }
 
 function addtoCart() {
@@ -144,10 +145,13 @@ function addtoCart() {
     "[" + sizeInput + ", " + riceInput + ", " + proteinInput + ", " + sideInput  + "]: $" + total +"    "+ "</label>" + 
     '<button type="button" class="delete-btn" onclick="deleteItem()"> Delete</button>' +    
     "<br>";
+
+    //instead add all the info from the current order to the cart, with the Name of the order
 }
 
 function resetCart() {
     document.getElementById("current").innerHTML = "order item goes here <br>"
+    //instead delete all the current orders from the cart
 }
 
 function movetoCart() {

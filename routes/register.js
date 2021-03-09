@@ -50,6 +50,7 @@ router.post('/', (request, response) => {
     const last = request.body.last
     const email = request.body.email
     const password = request.body.password
+    
     //Verify that the caller supplied all the parameters
     //In js, empty strings or null values evaluate to false
     if(isProvided(first) && isProvided(last) && isProvided(email) && isProvided(password)) {

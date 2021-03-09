@@ -8,6 +8,7 @@ function checkSignForm(form) {
         isSame = false;
     } else {
         isSame = true;
+        <a href="order.html">ORDER</a>
     }
     return isSame;
 }
@@ -18,7 +19,7 @@ function checkRegForm(form) {
     var cnfpwd = $("#cnfpwd").val();
 
     if (pwd===cnfpwd) {
-        alert("Registered! Welcome to Kim's Pizzeria!");
+        alert("Registered! Welcome to Bonsai Wok!");
         isSame = true;
     } else {
         alert("Confirm Password Does not Match With Your Password!");
