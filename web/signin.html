@@ -7,10 +7,12 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Dancing+Script:wght@500&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="./scripts/login.js"></script>
+    
 
         <script type="text/JavaScript">
 
@@ -52,7 +54,7 @@
                 const password = $("#password").val();
                 const password2 = $("#password2").val();
 
-                if(password === password2){
+                if(password == password2){
                     let response = await fetch("/auth",  {
                     method: 'POST',
                     headers: {
@@ -106,7 +108,7 @@
                     <li><i class="fa fa-book"></i><a href="menu.html">MENU</a></li>
                     <li><i class="fa fa-cutlery"></i><a href="order.html">ORDER</a></li>
                     <li><i class="fa fa-shopping-cart"></i><a href="cart.html">CART</a></li>
-                    <li><i class="fa fa-signin"></i><a href="signin.html">SIGN IN</a></li>
+                    <li><i class="fa fa-sign-in"></i><a href="signin.html">SIGN IN</a></li>
                 </ul>
             </nav>
             </div>
@@ -144,8 +146,8 @@
                             <input type ="text" placeholder ="first name" id="fname"/>
                             <input type ="text" placeholder ="last name" id="lname"/>
                             <input type ="text" placeholder ="email address" id="email"/>
-                            <input type ="text" placeholder ="password" id="password"/>
-                            <input type ="text" placeholder ="confirmed password" id="password2"/>
+                            <input type ="password" placeholder ="password" id="password"/>
+                            <input type ="password" placeholder ="confirmed password" id="password2"/>
                             <button type="button" id="butt2"> register </button>
                             <p class= "message">Already Registered? <a href="#">Login</a> 
                             </p>

@@ -8,7 +8,7 @@ function checkSignForm(form) {
         isSame = false;
     } else {
         isSame = true;
-        <a href="order.html">ORDER</a>
+        
     }
     return isSame;
 }

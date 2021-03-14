@@ -23,7 +23,7 @@ const router = express.Router()
  * @apiParam {String} last a users last name
  * @apiParam {String} email a users email *unique
  * @apiParam {String} password a users password
- * @apiParam {String} [username] a username *unique, if none provided, email will be used
+ * 
  * 
  * @apiParamExample {json} Request-Body-Example:
  *  {
@@ -31,6 +31,7 @@ const router = express.Router()
  *      "last":"Bryan",
  *      "email":"cfb3@fake.email",
  *      "password":"test12345"
+ *  
  *  }
  * 
  * @apiSuccess (Success 201) {boolean} success true when the name is inserted
