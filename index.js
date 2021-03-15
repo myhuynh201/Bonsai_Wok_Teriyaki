@@ -34,14 +34,14 @@ app.use(middleware.jsonError)
 /*
  * A simple Node.js endpoint that responds with HTML.
  */
-app.use('/node', require('./routes/hello.js'))
-app.use('/fetch', require('./routes/fetch.js'))
-app.use('/reverse', require('./routes/lab4.js'))
+//app.use('/node', require('./routes/hello.js'))
+//app.use('/fetch', require('./routes/fetch.js'))
+//app.use('/reverse', require('./routes/lab4.js'))
 
-app.use('/', require('./routes/demo_eps.js'))
+//app.use('/', require('./routes/demo_eps.js'))
 
 
-app.use('/demosql', require('./routes/demosql.js'))
+//app.use('/demosql', require('./routes/demosql.js'))
 app.use('/auth', require('./routes/signin.js'))
 
 
