@@ -10,9 +10,9 @@ CREATE TABLE Orders (OrderID SERIAL PRIMARY KEY,
                     My_Size SIZE,
                     My_Rice RICE,
                     My_Protein PROTEIN,
-                    Option1 BOOLEAN,
-                    Option2 BOOLEAN,
-                    Option3 BOOLEAN,
+                    Side1 BOOLEAN,
+                    Side2 BOOLEAN,
+                    Side3 BOOLEAN,
                     FOREIGN KEY(MemberID) REFERENCES Members(MemberID)
 );
 
@@ -38,7 +38,7 @@ VALUES
 
 --Add Multiple orders
 INSERT INTO 
-    Orders(MemberID, My_Size, My_Rice, My_Protein, Option1, Option2, Option3)
+    Orders(MemberID, My_Size, My_Rice, My_Protein, Side1, Side2, Side3)
 SELECT 
     Members.MemberId,
     'small', 
@@ -52,7 +52,7 @@ WHERE Members.Email='test1@test.com'
 RETURNING *;
 
 INSERT INTO 
-    Orders(MemberID, My_Size, My_Rice, My_Protein, Option1, Option2, Option3)
+    Orders(MemberID, My_Size, My_Rice, My_Protein, Side1, Side2, Side3)
 SELECT 
     Members.MemberId,
     'large', 
@@ -66,7 +66,7 @@ WHERE Members.Email='test1@test.com'
 RETURNING *;
 
 INSERT INTO 
-    Orders(MemberID, My_Size, My_Rice, My_Protein, Option1, Option2, Option3)
+    Orders(MemberID, My_Size, My_Rice, My_Protein, Side1, Side2, Side3)
 SELECT 
     Members.MemberId,
     'medium', 
@@ -81,7 +81,7 @@ RETURNING *;
 
 --This query WILL FAIL! It demostrates an invalide value for an enum.
 INSERT INTO 
-    Orders(MemberID, My_Size, My_Rice, My_Protein, Option1, Option2, Option3)
+    Orders(MemberID, My_Size, My_Rice, My_Protein, Side1, Side2, Side3)
 SELECT 
     Members.MemberId,
     'medium_fail', 

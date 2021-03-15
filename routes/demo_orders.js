@@ -37,12 +37,9 @@ const isBoolean = require('../utilities/exports').helpers.isBoolean
  */ 
 router.get("/", (request, response) => {
 
-    // const theQuery = 
-    //     `SELECT My_Size, My_Color, Option1, Option2, Option3 
-    //      FROM Orders`
 
     const theQuery = 
-        `SELECT My_Size, My_Color, Option1, Option2, Option3 
+        `SELECT My_Size, My_Rice, My_Protein, Side1, Side2, Side3 
          FROM Orders
          WHERE MemberID=$1`
     let values = [request.decoded.memberid]
@@ -79,18 +76,20 @@ router.get("/", (request, response) => {
  * @apiHeader {String} authorization Valid JSON Web Token JWT 
  * 
  * @apiParam {String} size the size of the order
- * @apiParam {String} color the color of the order
- * @apiParam {Boolean} option1 the first option of the order
- * @apiParam {Boolean} option2 the second option of the order
- * @apiParam {Boolean} option3 the third option of the order
+ * @apiParam {String} rice the rice option of the order
+ * @apiParam {String} protein the protein option of the order
+ * @apiParam {Boolean} side1 the first option of the order
+ * @apiParam {Boolean} side2 the second option of the order
+ * @apiParam {Boolean} side3 the third option of the order
  * 
  * @apiParamExample {json} Request-Body-Example:
  *  {
  *      "size":"medium",
- *      "color":"green",
- *      "option1":true,
- *      "option2":false,
- *      "option3":true
+ *      "rice":"white",
+ *      "protein":"chicken",
+ *      "side1":true,
+ *      "side2":false,
+ *      "side3":true
  *  }
  * 
  * @apiSuccess (Success 201) {boolean} success true when the order is inserted
@@ -106,17 +105,18 @@ router.get("/", (request, response) => {
 router.post("/", (request, response) => {
     const memberid = request.decoded.memberid
     const size = request.body.size
-    const color = request.body.color
-    const option1 = request.body.option1
-    const option2 = request.body.option2
-    const option3 = request.body.option3
+    const rice = request.body.rice
+    const protein = request.body.protein
+    const side1 = request.body.side1
+    const side2 = request.body.side2
+    const side3 = request.body.side3
 
-    const theQuery = 'INSERT INTO Orders(MemberID, My_Size, My_Color, Option1, Option2, Option3) VALUES ($1, $2, $3, $4, $5, $6)'
-    let values = [memberid, size, color, option1, option2, option3]
+    const theQuery = 'INSERT INTO Orders(MemberID, My_Size, My_Rice, My_Protein, Side1, Side2, Side3) VALUES ($1, $2, $3, $4, $5, $6, $6)'
+    let values = [memberid, size, rice, protein, side1, side2, side3]
 
-    if(isProvided(size) && isProvided(color)){
+    if(isProvided(size) && isProvided(rice) && isProvided(protein)){
 
-        if(isSize(size) && isColor(color) && isBoolean(option1) && isBoolean(option2) && isBoolean(option3)) {
+        if(isSize(size) && isRice(rice) && isProtein(protein) && isBoolean(side1) && isBoolean(side2) && isBoolean(side3)) {
             pool.query(theQuery, values)
                 .then(result => {
                     //We successfully added the order!
