@@ -762,28 +762,35 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "color",
-            "description": "<p>the color of the order</p>"
+            "field": "rice",
+            "description": "<p>the rice option of the order</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "protein",
+            "description": "<p>the protein option of the order</p>"
           },
           {
             "group": "Parameter",
             "type": "Boolean",
             "optional": false,
-            "field": "option1",
+            "field": "side1",
             "description": "<p>the first option of the order</p>"
           },
           {
             "group": "Parameter",
             "type": "Boolean",
             "optional": false,
-            "field": "option2",
+            "field": "side2",
             "description": "<p>the second option of the order</p>"
           },
           {
             "group": "Parameter",
             "type": "Boolean",
             "optional": false,
-            "field": "option3",
+            "field": "side3",
             "description": "<p>the third option of the order</p>"
           }
         ]
@@ -791,7 +798,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Body-Example:",
-          "content": "{\n    \"size\":\"medium\",\n    \"color\":\"green\",\n    \"option1\":true,\n    \"option2\":false,\n    \"option3\":true\n}",
+          "content": "{\n    \"size\":\"medium\",\n    \"rice\":\"white\",\n    \"protein\":\"chicken\",\n    \"side1\":true,\n    \"side2\":false,\n    \"side3\":true\n}",
           "type": "json"
         }
       ]
