@@ -56,14 +56,14 @@
 
                 if(password == password2){
                     let response = await fetch("/auth",  {
-                    method: 'POST',
-                    headers: {
-                        "first": first,
-                        "last": last,
-                        "email":email,
-                        "password": password
-                    }
-                })
+                        method: 'POST',
+                        headers: {
+                            "first": first,
+                            "last": last,
+                            "email":email,
+                            "password": password
+                        }
+                    })
                     if (response.ok) { // if HTTP-status is 200-299
                         // get the response body (the method explained below)
                         let json = await response.json()
