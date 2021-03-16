@@ -11,90 +11,15 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-        <script src="./scripts/login.js"></script>
+        <script src="./scripts/js/signin.js"></script>
+        <script src="./scripts/js/register.js"></script>
     
 
         <script type="text/JavaScript">
 
-            async function sign_in() {
-
-                let encoded = window.btoa($("#uname").val() + ':' + $("#pwd").val())
-
-                console.log($("#uname").val() + ':' + $("#pwd").val())
-                console.log(encoded)
-
-                let response = await fetch("/auth",  {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': 'Basic ' + encoded
-                    }
-                })
-                if (response.ok) { // if HTTP-status is 200-299
-                    // get the response body (the method explained below)
-                    let json = await response.json()
-                    console.log(json)
-
-                    if (json.success) {
-                        document.location.href="order.html";
-                        console.log(document.cookie)
-                    }
-                } else {
-                    alert("HTTP-Error: " + response.status)
-                    console.log(response.status)
-                    let json = await response.json()
-                    console.log(json)
-                }
-            }
             
-            async function register_in() {
-
-                const first = $("#fname").val();
-                const last = $("#lname").val();
-                const email = $("#email").val();
-                const password = $("#password").val();
-                const password2 = $("#password2").val();
-
-                if(password == password2){
-                    let response = await fetch("/auth",  {
-                        method: 'POST',
-                        headers: {
-                            "first": first,
-                            "last": last,
-                            "email":email,
-                            "password": password
-                        }
-                    })
-                    if (response.ok) { // if HTTP-status is 200-299
-                        // get the response body (the method explained below)
-                        let json = await response.json()
-                        console.log(json)
-
-                        if (json.success) {
-                            document.location.href="signin.html";
-                            console.log(document.cookie)
-                        }
-                    } else {
-                        alert("HTTP-Error: " + response.status)
-                        console.log(response.status)
-                        let json = await response.json()
-                        console.log(json)
-                    }
-                } else {
-                    alert("HTTP-Error: " + response.status)
-                    console.log(response.status)
-                    let json = await response.json()
-                    console.log(json)
-                }
-            }
-
-            $(document).ready(function() {
-                $("#butt").click(sign_in)
-            })
-        
-
-            $(document).ready(function() {
-                $("#butt2").click(register_in)
-            })
+            
+           
         </script>
 
 
@@ -156,7 +81,7 @@
                         <form class="login-form" id="form">
                             <input type="text" placeholder = "email address" id="uname"/>
                             <input type="text" placeholder = "password" id="pwd"/>
-                            <button type="button" id="butt"> login</button>
+                            <button type="button" id="signinbutton"> login</button>
                             <p class = "message">Not Registered? <a href="#">Register</a>
                             </p>
                         </form>
