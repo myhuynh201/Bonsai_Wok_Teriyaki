@@ -82,7 +82,7 @@ app.use("/files", express.static('routes'))
 * In this case, we assign the port to be 5000 if the PORT variable isn't set
 * You can consider 'let port = process.env.PORT || 5000' to be equivalent to:
 * let port; = process.env.PORT;
-* if(port == null) {port = 5000} 
+* if(port == null) {port = 5000} dzdz
 */ 
 app.listen(process.env.PORT || 5000, () => {
     console.log("Server up and running on port: " + (process.env.PORT || 5000));
