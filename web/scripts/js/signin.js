@@ -1,5 +1,3 @@
-
-
 async function sign_in() {
 
     let encoded = window.btoa($("#uname").val() + ':' + $("#pwd").val())

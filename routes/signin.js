@@ -87,6 +87,9 @@ router.get('/', (request, response, next) => {
             //Combined their password with our salt, then hash
             let theirSaltedHash = getHash(request.auth.password, salt)
 
+            console.log("ourSaltedHash:" + ourSaltedHash )
+            console.log("their SaltedHash: " + theirSaltedHash )
+
             //Did our salted hash match their salted hash?
             if (ourSaltedHash === theirSaltedHash ) {
                 //credentials match. get a new JWT
