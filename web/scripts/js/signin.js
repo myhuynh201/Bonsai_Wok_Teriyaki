@@ -19,13 +19,15 @@ async function sign_in() {
         console.log(json)
 
         if (json.success) {
+            localStorage.setItem("signedIn", true)
+            console.log(localStorage.getItem("signedIn"))
             document.location.href="order.html";
             console.log(document.cookie)
         } else {
-        alert("HTTP-Error: " + response.status)
-        console.log(response.status)
-        let json = await response.json()
-        console.log(json)
+            alert("HTTP-Error: " + response.status)
+            console.log(response.status)
+            let json = await response.json()
+            console.log(json)
         }  
     } else {
         alert("HTTP-Error: " + response.status + " Incorrect Password!")

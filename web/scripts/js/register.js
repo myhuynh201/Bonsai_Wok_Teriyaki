@@ -28,13 +28,13 @@ async function register_in() {
             document.location.href="signin.html";
             console.log(document.cookie)
         } else {
-            alert("HTTP-Error: " + response.status + " json not sucess")
+            alert("HTTP-Error: " + response.status + "Check your information")
             console.log(response.status)
             let json = await response.json()
             console.log(json)
         }
     } else {
-        alert("HTTP-Error: " + response.status + " response is not ok")
+        alert("HTTP-Error: " + response.status + " Existing Account")
         console.log(response.status)
         let json = await response.json()
         console.log(json)
