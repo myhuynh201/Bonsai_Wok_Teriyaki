@@ -224,7 +224,7 @@ async function displayOrders() {
             });
         } 
     } else {
-            alert("HTTP-Error: " + response.status)
+            alert("HTTP-Error: " + response.status + "could not load the orders")
             console.log(response.status)
             let json = await response.json()
             console.log(json)
@@ -237,14 +237,6 @@ async function displayOrders() {
 window.onload=displayOrders()
 
 $(document).ready(function(){
-    
-    $("#addtocart").click(function() {
-        if(localStorage.getItem("signedIn") == true) {
-            addtoCart()
-            placeOrder()
-        } else {
-            addtoCart()
-        }
-    })
+    $("#addtocart").click(placeOrder) 
 })
 
