@@ -173,7 +173,7 @@ async function placeOrder() {
         Side3: $('#Side3').is(':checked')
     };
 
-    let response = await fetch("/orders", {
+    let response = await fetch('/orders', {
         method: 'POST',
         headers: {
             'Content-Type' : 'application/json'
@@ -232,11 +232,8 @@ async function displayOrders() {
     }
 
 
-
-
-window.onload=displayOrders()
-
 $(document).ready(function(){
     $("#addtocart").click(placeOrder) 
+    $("#prev").click(displayOrders)
 })
 
