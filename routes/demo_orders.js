@@ -111,7 +111,7 @@ router.post("/", (request, response) => {
     const side2 = request.body.side2
     const side3 = request.body.side3
 
-    const theQuery = 'INSERT INTO Orders(MemberID, My_Size, My_Rice, My_Protein, Side1, Side2, Side3) VALUES ($1, $2, $3, $4, $5, $6, $7)'
+    const theQuery = 'INSERT INTO Orders(MemberID, My_Size, My_Rice, My_Protein, Option1, Option2, Option3) VALUES ($1, $2, $3, $4, $5, $6, $7)'
     let values = [memberid, size, rice, protein, side1, side2, side3]
 
     console.log('we are here!')
