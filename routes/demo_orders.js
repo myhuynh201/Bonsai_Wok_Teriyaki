@@ -114,6 +114,8 @@ router.post("/", (request, response) => {
     const theQuery = 'INSERT INTO Orders(MemberID, My_Size, My_Rice, My_Protein, Side1, Side2, Side3) VALUES ($1, $2, $3, $4, $5, $6, $7)'
     let values = [memberid, size, rice, protein, side1, side2, side3]
 
+    console.log('we are here!')
+
     if(isProvided(size) && isProvided(rice) && isProvided(protein)){
 
         if(isSize(size) && isRice(rice) && isProtein(protein) && isBoolean(side1) && isBoolean(side2) && isBoolean(side3)) {
