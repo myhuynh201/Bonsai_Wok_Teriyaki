@@ -8,8 +8,8 @@ const pool = require('../utilities/exports').pool
 
 const isProvided = require('../utilities/exports').helpers.isProvided
 const isSize = require('../utilities/exports').helpers.isSize
-const isSize = require('../utilities/exports').helpers.isRice
-const isSize = require('../utilities/exports').helpers.isProtein
+const isRice = require('../utilities/exports').helpers.isRice
+const isProtein = require('../utilities/exports').helpers.isProtein
 const isBoolean = require('../utilities/exports').helpers.isBoolean
 
 /**
