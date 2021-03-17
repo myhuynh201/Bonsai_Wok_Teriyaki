@@ -186,25 +186,8 @@ async function placeOrder() {
     if(response.ok) {
         let json = await response.json()
         console.log(json)
-        window.location.href = 'order.html'
-        let counter = 0;
-        json.orders.forEach(element => {
-            counter ++;
-            var size = element.my_size;
-            var rice = element.my_rice;
-            var protein = element.my_protein;
-            var Side1 = element.Option1;
-            var Side2 = element.Option2;
-            var Side3 = element.Option3;
-
-            $("#current").append(`<ul><li> Order #${counter} :
-                Size: ${size},
-                Rice: ${rice},
-                Protein: ${protein},
-                Side1: ${Side1},
-                Side2: ${Side2},
-                Side3: ${Side3}</li></ul>`)
-        });
+        addtoCart()
+       
     } else {
         alert("HTTP-Error " + response.status)
         console.log(response.status)
@@ -225,6 +208,9 @@ async function displayOrders() {
             $("#previous").append('<li>No Previous Orders</li>')
         } else {
             let counter = 0;
+            
+            document.getElementById("$#previous").innerHTML = "";
+            
             json.orders.forEach(element => {
                 counter ++;
                 var size = element.my_size;
