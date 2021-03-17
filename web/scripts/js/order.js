@@ -195,6 +195,11 @@ async function placeOrder() {
     }
 }
 
+function clearBox(elementID)
+{
+    document.getElementById(elementID).innerHTML = "";
+}
+
 async function displayOrders() {
     let response = await fetch('/orders', {
         method: 'GET',
@@ -215,6 +220,11 @@ async function displayOrders() {
                 var Side1 = element.Option1;
                 var Side2 = element.Option2;
                 var Side3 = element.Option3;
+
+                clearBox("#previous")
+
+
+
                 $("#previous").append(`<ul><li> Order #${counter} :
                     Size: ${size},
                     Rice: ${rice},
@@ -226,7 +236,7 @@ async function displayOrders() {
             });
         } 
     } else {
-            alert("HTTP-Error: " + response.status + "could not load the orders")
+            alert("HTTP-Error: " + response.status + " could not load the orders")
             console.log(response.status)
             let json = await response.json()
             console.log(json)
@@ -236,6 +246,7 @@ async function displayOrders() {
 
 $(document).ready(function(){
     $("#addtocart").click(placeOrder) 
+    $("#addtocart").click(addtoCart)
     $("#prev").click(displayOrders)
 })
 
