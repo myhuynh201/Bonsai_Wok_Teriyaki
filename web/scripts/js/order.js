@@ -173,6 +173,8 @@ async function placeOrder() {
         Side3: $('#Side3').is(':checked')
     };
 
+    console.log(data)
+
     let response = await fetch('/orders', {
         method: 'POST',
         headers: {
