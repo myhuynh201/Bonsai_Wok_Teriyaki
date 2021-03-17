@@ -209,8 +209,8 @@ async function displayOrders() {
         } else {
             let counter = 0;
             
-            document.getElementById("$#previous").innerHTML = "";
-            
+            document.getElementById("previous").innerHTML = "";
+
             json.orders.forEach(element => {
                 counter ++;
                 var size = element.my_size;
