@@ -40,7 +40,7 @@ router.get("/", (request, response) => {
 
 
     const theQuery = 
-        `SELECT My_Size, My_Rice, My_Protein, Side1, Side2, Side3 
+        `SELECT My_Size, My_Rice, My_Protein, Option1, Option2, Option3 
          FROM Orders
          WHERE MemberID=$1`
     let values = [request.decoded.memberid]
@@ -119,7 +119,6 @@ router.post("/", (request, response) => {
 
     if(isProvided(size) && isProvided(rice) && isProvided(protein)){
 
-        if(isSize(size) && isRice(rice) && isProtein(protein) && isBoolean(side1) && isBoolean(side2) && isBoolean(side3)) {
             pool.query(theQuery, values)
                 .then(result => {
                     //We successfully added the order!
@@ -135,12 +134,7 @@ router.post("/", (request, response) => {
                         message: err.detail
                     })
                 })
-        } else {
-            
-            response.status(400).send({
-                message: "Invalid parameters"
-            })
-        }
+      
     } else {
         response.status(400).send({
             message: "Missing required information"

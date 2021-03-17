@@ -212,9 +212,9 @@ async function displayOrders() {
                 var size = element.my_size;
                 var rice = element.my_rice;
                 var protein = element.my_protein;
-                var Side1 = element.Side1;
-                var Side2 = element.Side2;
-                var Side3 = element.Side3;
+                var Side1 = element.Option1;
+                var Side2 = element.Option2;
+                var Side3 = element.Option3;
                 $("#previous").append(`<ul><li> Order #${counter} :
                     Size: ${size},
                     Rice: ${rice},
