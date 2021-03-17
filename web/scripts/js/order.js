@@ -162,3 +162,89 @@ function movetoCart() {
 function deleteItem() {
 
 }
+
+async function placeOrder() {
+    const data = {
+        size: document.querySelector('input[name="size"]:checked').value,
+        rice: document.querySelector('input[name="rice"]:checked').value,
+        protein: document.querySelector('input[name="protein"]:checked').value,
+        Side1: $('#Side1').is(':checked'),
+        Side2: $('#Side2').is(':checked'),
+        Side3: $('#Side3').is(':checked')
+    };
+
+    let response = await fetch("/orders", {
+        method: 'POST',
+        headers: {
+            'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+
+    if(response.ok) {
+        let json = await response.json()
+        console.log(json)
+        window.location.href = 'order.html'
+    } else {
+        alert("HTTP-Error " + response.status)
+        console.log(response.status)
+        let json = await response.json()
+        console.log(json)
+    }
+}
+
+async function displayOrders() {
+    let response = await fetch('/orders', {
+        method: 'GET',
+    })
+
+    if(response.ok) {
+        let json = await response.json()
+        console.log(json)
+        if(json.orders.length===0) {
+            $("#previous").append('<li>No Previous Orders</li>')
+        } else {
+            let counter = 0;
+            json.orders.forEach(element => {
+                counter ++;
+                var size = element.my_size;
+                var rice = element.my_rice;
+                var protein = element.my_protein;
+                var Side1 = element.Side1;
+                var Side2 = element.Side2;
+                var Side3 = element.Side3;
+                $("#previous").append(`<ul><li> Order #${counter} :
+                    Size: ${size},
+                    Rice: ${rice},
+                    Protein: ${protein},
+                    Side1: ${Side1},
+                    Side2: ${Side2},
+                    Side3: ${Side3}</li></ul>`)
+                    
+            });
+        } 
+    } else {
+            alert("HTTP-Error: " + response.status)
+            console.log(response.status)
+            let json = await response.json()
+            console.log(json)
+        }
+    }
+
+
+
+
+window.onload=displayOrders()
+
+$(document).ready(function(){
+    
+    $("#addtocart").click(function() {
+        if(localStorage.getItem("signedIn") == true) {
+            addtoCart()
+            placeOrder()
+        } else {
+            addtoCart()
+        }
+    })
+})
+
