@@ -10,7 +10,6 @@ const isProvided = require('../utilities/exports').helpers.isProvided
 const isSize = require('../utilities/exports').helpers.isSize
 const isSize = require('../utilities/exports').helpers.isRice
 const isSize = require('../utilities/exports').helpers.isProtein
-const isColor = require('../utilities/exports').helpers.isColor
 const isBoolean = require('../utilities/exports').helpers.isBoolean
 
 /**
