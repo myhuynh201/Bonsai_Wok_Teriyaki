@@ -63,7 +63,7 @@ Code Requiremetns
 - Website were strive for ADA compliance.
 
 3. Link to Github repository
-https://github.com/myhuynh201/tcss460-a1
+https://github.com/myhuynh201/Bonsai_Wok_Teriyaki
 
 4. Link to the home page
 https://duyen201-tcss460-a1.herokuapp.com/
